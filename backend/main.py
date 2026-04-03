@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 
 from ai_engine import extract_pain_points, generate_followup_questions, generate_user_survey
 
-load_dotenv()
+load_dotenv(override=True)
 
 # ── App Setup ──────────────────────────────────────
 app = FastAPI(
@@ -24,13 +24,7 @@ app = FastAPI(
 # CORS — allow frontend (Live Server default port) and localhost
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5500",
-        "http://127.0.0.1:5500",
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-        "null",  # file:// protocol when opening HTML directly
-    ],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

@@ -1,6 +1,6 @@
 """
 AI Engine — All Gemini AI functions for ProdMind AI
-Uses google-generativeai with gemini-2.0-flash-exp
+Uses google-generativeai with multi-model fallback logic.
 """
 
 import os
@@ -10,7 +10,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # ── Constants ──────────────────────────────────────
-MODEL_NAME = "gemini-2.0-flash-exp"
+MODELS_TO_TRY = [
+    "gemini-1.5-flash",
+    "gemini-1.5-flash-latest",
+    "gemini-2.0-flash-exp",
+    "gemini-pro"
+]
 
 ANALYSIS_PROMPT = """You are a world-class product manager who has worked at multiple YC-backed startups.
 Analyze these raw user interview responses carefully.
@@ -104,29 +109,36 @@ Rules:
 **Kill-shot question:** [Label which question this is and why]"""
 
 
-def get_model():
-    """Initialize and return a Gemini model instance."""
+def call_gemini_with_fallback(prompt: str) -> str:
+    """Tries multiple model names in sequence to avoid 404 errors."""
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
         raise RuntimeError("GEMINI_API_KEY not set. Check your .env file.")
+    
+    # Clean API key
+    api_key = api_key.strip().strip('"').strip("'")
     genai.configure(api_key=api_key)
-    return genai.GenerativeModel(MODEL_NAME)
+
+    last_error = None
+    for model_name in MODELS_TO_TRY:
+        try:
+            model = genai.GenerativeModel(model_name)
+            response = model.generate_content(prompt)
+            return response.text
+        except Exception as e:
+            last_error = e
+            continue
+    
+    raise last_error
 
 
 def extract_pain_points(responses: list[str], product_context: str = "") -> dict:
-    """
-    Analyzes user interview responses and returns a structured product spec.
-    
-    Returns a dict with 'full_text' and parsed sections.
-    """
+    """Analyzes user interview responses and returns a structured product spec."""
     if len(responses) < 2:
         raise ValueError("Need at least 2 user responses for meaningful analysis.")
 
-    model = get_model()
     separator = "\n\n---\n\n"
-    combined = separator.join(
-        f'User {i+1}: "{r}"' for i, r in enumerate(responses)
-    )
+    combined = separator.join(f'User {i+1}: "{r}"' for i, r in enumerate(responses))
 
     prompt = (
         f"{ANALYSIS_PROMPT}\n\n"
@@ -135,34 +147,25 @@ def extract_pain_points(responses: list[str], product_context: str = "") -> dict
         f"{combined}"
     )
 
-    response = model.generate_content(prompt)
-    full_text = response.text
+    full_text = call_gemini_with_fallback(prompt)
 
     return {
         "full_text": full_text,
         "product_context": product_context,
-        "response_count": len(responses),
+        "response_count": len(responses)
     }
 
 
 def generate_followup_questions(initial_answer: str, product_context: str = "") -> str:
-    """
-    Generates Mom Test follow-up questions based on what a user just said.
-    """
-    model = get_model()
+    """Generates Mom Test follow-up questions."""
     prompt = FOLLOWUP_PROMPT.format(
         answer=initial_answer,
         context=product_context or "Not specified"
     )
-    response = model.generate_content(prompt)
-    return response.text
+    return call_gemini_with_fallback(prompt)
 
 
 def generate_user_survey(product_description: str) -> str:
-    """
-    Creates a ready-to-use 5-question user interview script.
-    """
-    model = get_model()
+    """Creates a ready-to-use 5-question user interview script."""
     prompt = SURVEY_PROMPT.format(product=product_description)
-    response = model.generate_content(prompt)
-    return response.text
+    return call_gemini_with_fallback(prompt)
