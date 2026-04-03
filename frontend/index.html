@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProdMind AI — Know exactly what to build next. In 10 seconds.</title>
+  <meta name="description" content="ProdMind AI analyzes your user interviews using Gemini 2.0 and tells you exactly what to build next. Used by 12,400+ founders, YC alumni, and indie hackers." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🧠</text></svg>" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/landing.css" />
+</head>
+<body>
+
+<!-- ══ NAVBAR ══════════════════════════════════════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/><path d="M19 3v4"/><path d="M21 5h-4"/></svg>
+      ProdMind
+    </a>
+    <div class="nav-links">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="blog.html">Blog</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-ghost btn-sm">Log In</a>
+      <a href="signup.html" class="btn btn-primary btn-sm">Get Started Free →</a>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HERO ══════════════════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="grid-overlay"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge animate-fadeInUp">
+      <span class="pill pill-purple">✦ Powered by Gemini 2.0 Flash</span>
+    </div>
+
+    <h1>
+      Your AI product manager.<br />
+      <span class="gradient-text">Results in 10 seconds.</span>
+    </h1>
+
+    <p class="hero-sub">
+      Paste raw user interview notes. Get a prioritized product spec —
+      pain points, quick wins, big bets, and what <em>not</em> to build.
+      Used by <strong>12,400+</strong> founders who ship smarter.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="signup.html" class="btn btn-primary btn-lg" id="cta-hero-1">
+        ✦ Start for Free — No Card Needed
+      </a>
+      <a href="#how-it-works" class="btn btn-ghost btn-lg" id="cta-hero-2">
+        See how it works →
+      </a>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:16px;margin-top:32px;justify-content:center" class="animate-fadeInUp" style="animation-delay:0.4s">
+      <div class="avatar-stack">
+        <div class="av" style="background:linear-gradient(135deg,#7c3aed,#4f46e5)">AK</div>
+        <div class="av" style="background:linear-gradient(135deg,#059669,#0d9488)">SR</div>
+        <div class="av" style="background:linear-gradient(135deg,#dc2626,#ea580c)">MP</div>
+        <div class="av" style="background:linear-gradient(135deg,#d97706,#ca8a04)">RG</div>
+        <div class="av" style="background:linear-gradient(135deg,#7c3aed,#6d28d9)">+</div>
+      </div>
+      <span class="avatar-stack-text">Joined by <strong>12,400+</strong> founders this month</span>
+    </div>
+  </div>
+
+  <!-- Mockup Window -->
+  <div class="mockup-wrap">
+    <div class="mockup-window">
+      <div class="mockup-bar">
+        <div class="mock-dot"></div>
+        <div class="mock-dot"></div>
+        <div class="mock-dot"></div>
+        <div class="mock-url">prodmind-ai.web.app/dashboard</div>
+      </div>
+      <div class="mockup-body">
+        <div class="mock-sidebar">
+          <div class="mock-nav-item active"><div class="mock-nav-icon"></div><div class="mock-nav-label"></div></div>
+          <div class="mock-nav-item"><div class="mock-nav-icon"></div><div class="mock-nav-label" style="width:60%"></div></div>
+          <div class="mock-nav-item"><div class="mock-nav-icon"></div><div class="mock-nav-label" style="width:75%"></div></div>
+          <div class="mock-nav-item"><div class="mock-nav-icon"></div><div class="mock-nav-label" style="width:50%"></div></div>
+        </div>
+        <div class="mock-main">
+          <div class="mock-header-row">
+            <div class="mock-title"></div>
+            <div class="mock-cta"></div>
+          </div>
+          <div class="mock-stats">
+            <div class="mock-stat"></div>
+            <div class="mock-stat"></div>
+            <div class="mock-stat"></div>
+            <div class="mock-stat"></div>
+          </div>
+          <div class="mock-panel">
+            <div class="mock-line purple"></div>
+            <div class="mock-line" style="width:85%"></div>
+            <div class="mock-line short"></div>
+            <div class="mock-line shorter"></div>
+            <div style="height:12px"></div>
+            <div class="mock-line purple" style="width:40%"></div>
+            <div class="mock-line" style="width:70%"></div>
+            <div class="mock-line short"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FEATURED IN TICKER ══════════════════════════════ -->
+<section class="proof-bar" style="padding:28px 0;background:var(--bg-secondary)">
+  <p class="proof-label">Loved by founders from</p>
+  <div class="ticker-wrapper" style="white-space: nowrap;">
+    <div class="ticker-track">
+      <!-- Duplicated for seamless loop -->
+      <span class="ticker-item">🚀 Y Combinator</span>
+      <span class="ticker-dot"></span>
+      <span class="ticker-item">📰 TechCrunch</span>
+      <span class="ticker-dot"></span>
+      <span class="ticker-item">🐱 Product Hunt #1</span>
+      <span class="ticker-dot"></span>
+      <span class="ticker-item">🗞 Hacker News</span>
+      <span class="ticker-dot"></span>
+      <span class="ticker-item">⚡ Indie Hackers</span>
+      <span class="ticker-dot"></span>
+      <span class="ticker-item">🎯 Founder Mode</span>
+      <span class="ticker-dot"></span>
+      <span class="ticker-item">📌 First Round</span>
+      <span class="ticker-dot"></span>
+      <span class="ticker-item">🌟 Andreessen Horowitz</span>
+      <span class="ticker-dot"></span>
+      <!-- Duplicate for loop -->
+      <span class="ticker-item">🚀 Y Combinator</span>
+      <span class="ticker-dot"></span>
+      <span class="ticker-item">📰 TechCrunch</span>
+      <span class="ticker-dot"></span>
+      <span class="ticker-item">🐱 Product Hunt #1</span>
+      <span class="ticker-dot"></span>
+      <span class="ticker-item">🗞 Hacker News</span>
+      <span class="ticker-dot"></span>
+      <span class="ticker-item">⚡ Indie Hackers</span>
+      <span class="ticker-dot"></span>
+      <span class="ticker-item">🎯 Founder Mode</span>
+      <span class="ticker-dot"></span>
+      <span class="ticker-item">📌 First Round</span>
+      <span class="ticker-dot"></span>
+      <span class="ticker-item">🌟 Andreessen Horowitz</span>
+      <span class="ticker-dot"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ LIVE STATS BAR ══════════════════════════════════ -->
+<section style="padding:64px 0">
+  <div class="container">
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-big" id="counter-1">0</div>
+        <div class="stat-desc">Founders using ProdMind</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-big" id="counter-2">0</div>
+        <div class="stat-desc">Analyses run to date</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-big">6 hrs</div>
+        <div class="stat-desc">Saved per analysis vs. manual</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BEFORE / AFTER ═══════════════════════════════════ -->
+<section style="padding:0 0 80px" id="demo">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px">
+      <span class="section-label">✦ The Transformation</span>
+      <h2 class="section-title">From messy notes to shipped features</h2>
+      <p class="section-sub" style="margin:0 auto">See exactly what happens to your user interviews when ProdMind analyzes them.</p>
+    </div>
+    <div class="before-after">
+      <div class="ba-card-before">
+        <div class="ba-label ba-label-before">❌ Before ProdMind</div>
+        <div class="ba-note">"user1: the app is slow and confusing idk why i can't find anything"</div>
+        <div class="ba-note">"user2: I keep getting lost trying to checkout, something about the flow seems off"</div>
+        <div class="ba-note">"user3: why is there no dark mode? Also notifications are annoying but I need them sort of"</div>
+        <div class="ba-note">"user4: the search is broken or something? can't find my own orders"</div>
+        <div style="margin-top:16px;font-size:0.875rem;color:var(--text-tertiary)">⏱ Hours of analysis needed. Still not sure what to build first.</div>
+      </div>
+      <div class="ba-arrow">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </div>
+      <div class="ba-card-after">
+        <div class="ba-label ba-label-after">✅ After ProdMind (10 sec)</div>
+        <div class="ba-note ba-note-after">🔥 <span class="ba-highlight">#1 Pain:</span> Navigation & Search — 3/4 users can't find what they need</div>
+        <div class="ba-note ba-note-after">⚡ <span class="ba-highlight">Quick Win:</span> Fix checkout flow → immediate drop-off reduction</div>
+        <div class="ba-note ba-note-after">🚀 <span class="ba-highlight">Big Bet:</span> Smart search with order history → retention driver</div>
+        <div class="ba-note ba-note-after">🚫 <span class="ba-highlight">Don't Build:</span> Dark mode — nice-to-have, zero impact on core pain</div>
+        <div style="margin-top:16px;font-size:0.875rem;color:var(--accent-green)">✓ Sprint-ready spec. Build what matters. Skip the rest.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FEATURES BENTO GRID ══════════════════════════════ -->
+<section class="features" id="features" style="padding:80px 0">
+  <div class="container">
+    <div style="margin-bottom:56px">
+      <span class="section-label">✦ Features</span>
+      <h2 class="section-title">Everything a great PM does.<br/>In 10 seconds flat.</h2>
+      <p class="section-sub">Built with the Mom Test methodology and YC product playbook baked in.</p>
+    </div>
+
+    <div class="bento-grid">
+      <!-- Large card 1 -->
+      <div class="bento-card bento-lg" style="background:linear-gradient(145deg,rgba(124,58,237,0.08),var(--bg-secondary))">
+        <div class="bento-tag">🔥 Core Feature</div>
+        <div class="bento-title">AI Pain Point Extraction</div>
+        <div class="bento-desc">Our AI reads between the lines. It doesn't just surface what users said — it finds what they <em>meant</em>. Root causes, not symptoms. Patterns across multiple users, not individual complaints.</div>
+        <div style="margin-top:24px;display:flex;flex-direction:column;gap:8px">
+          <div style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--text-secondary)">
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--accent-green);flex-shrink:0"></div>
+            Groups similar pain points automatically
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--text-secondary)">
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--accent-green);flex-shrink:0"></div>
+            Severity scoring (High / Medium / Low impact)
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--text-secondary)">
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--accent-green);flex-shrink:0"></div>
+            Direct user quote evidence attached
+          </div>
+        </div>
+        <div class="bento-visual" style="font-size:8rem;bottom:-10px;right:-10px;opacity:0.06">🔥</div>
+      </div>
+
+      <!-- Medium card right -->
+      <div class="bento-card bento-md" style="background:linear-gradient(145deg,rgba(16,185,129,0.05),var(--bg-secondary))">
+        <div class="bento-tag">⚡ Prioritization</div>
+        <div class="bento-title">Quick Wins vs Big Bets</div>
+        <div class="bento-desc">Never debate sprint priorities again. ProdMind separates features into Quick Wins (ship this week) and Big Bets (invest this quarter) — with clear reasoning for every decision.</div>
+        <div style="margin-top:24px">
+          <div style="display:flex;justify-content:space-between;background:var(--bg-tertiary);border:1px solid var(--border);border-radius:var(--r-md);padding:16px;margin-bottom:10px">
+            <span style="font-size:0.875rem;font-weight:600">Fix checkout flow</span>
+            <span class="pill pill-green" style="font-size:0.7rem">Quick Win</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;background:var(--bg-tertiary);border:1px solid var(--border);border-radius:var(--r-md);padding:16px">
+            <span style="font-size:0.875rem;font-weight:600">AI recommendations</span>
+            <span class="pill pill-purple" style="font-size:0.7rem">Big Bet</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Small cards row -->
+      <div class="bento-card bento-sm">
+        <div class="bento-tag">🎯 Mom Test</div>
+        <div class="bento-title">Interview Questions</div>
+        <div class="bento-desc">Generates non-leading follow-up questions designed to reveal truth, not validation. Based on Rob Fitzpatrick's Mom Test framework.</div>
+      </div>
+
+      <div class="bento-card bento-sm" style="background:linear-gradient(145deg,rgba(59,130,246,0.05),var(--bg-secondary))">
+        <div class="bento-tag">🚫 Anti-Feature</div>
+        <div class="bento-title">What NOT to Build</div>
+        <div class="bento-desc">The most valuable output. Know which feature requests are irrelevant noise before you waste a sprint on them.</div>
+      </div>
+
+      <div class="bento-card bento-sm" style="background:linear-gradient(145deg,rgba(245,158,11,0.05),var(--bg-secondary))">
+        <div class="bento-tag">📄 Export</div>
+        <div class="bento-title">Copy & Download</div>
+        <div class="bento-desc">Export your full product spec as PDF or copy to clipboard. Drop it straight into Notion, Linear, or your next board meeting.</div>
+      </div>
+
+      <!-- Full width bottom card -->
+      <div class="bento-card" style="grid-column:span 12;background:linear-gradient(90deg,rgba(124,58,237,0.08),rgba(79,70,229,0.04));display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:36px 40px">
+        <div>
+          <div class="bento-tag">⚙️ Powered By</div>
+          <div class="bento-title">Google Gemini 2.0 Flash</div>
+          <div class="bento-desc">The fastest, most capable AI model for structured analysis. Not just pattern matching — genuine product thinking, embedded with PM best practices from 1000s of successful startups.</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div style="background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:var(--r-md);padding:16px">
+            <div style="font-size:1.5rem;margin-bottom:6px">🧠</div>
+            <div style="font-size:0.875rem;font-weight:600">Contextual Reasoning</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:var(--r-md);padding:16px">
+            <div style="font-size:1.5rem;margin-bottom:6px">⚡</div>
+            <div style="font-size:0.875rem;font-weight:600">&lt;15s Response</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:var(--r-md);padding:16px">
+            <div style="font-size:1.5rem;margin-bottom:6px">🔒</div>
+            <div style="font-size:0.875rem;font-weight:600">Data Private</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:var(--r-md);padding:16px">
+            <div style="font-size:1.5rem;margin-bottom:6px">🌍</div>
+            <div style="font-size:0.875rem;font-weight:600">Any Language</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ HOW IT WORKS ══════════════════════════════════════ -->
+<section class="how-it-works" id="how-it-works">
+  <div class="container" style="text-align:center">
+    <span class="section-label">✦ How It Works</span>
+    <h2 class="section-title">From interviews to spec in 3 steps</h2>
+    <p class="section-sub" style="max-width:480px;margin:0 auto 56px">No setup. No learning curve. Just paste, click, and get your product roadmap.</p>
+
+    <div class="steps stagger">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Paste User Responses</h3>
+        <p>Copy raw interview notes, Slack messages, support tickets — anything. The messier, the better. No formatting needed.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>AI Analyzes Patterns</h3>
+        <p>Gemini AI processes everything through the lens of 1000s of YC playbooks, spotting root causes humans miss.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Get Your Sprint Plan</h3>
+        <p>Receive a complete, prioritized product spec. Take it straight to your engineering team or board deck.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TWEET WALL ════════════════════════════════════════ -->
+<section style="padding:100px 0">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:56px">
+      <span class="section-label">✦ Founder Love</span>
+      <h2 class="section-title">Don't take our word for it</h2>
+      <p class="section-sub" style="margin:0 auto">Real feedback from real founders who ship smarter with ProdMind.</p>
+    </div>
+
+    <div class="tweet-grid">
+      <div class="tweet-card">
+        <div class="tweet-header">
+          <div class="tweet-avatar" style="background:linear-gradient(135deg,#7c3aed,#4f46e5)">AK</div>
+          <div>
+            <div class="tweet-author-name">Arjun Kapoor</div>
+            <div class="tweet-author-handle">@arjunbuilds · YC W24</div>
+          </div>
+          <svg class="tweet-x-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </div>
+        <p class="tweet-text">Ran 6 user interviews last week. Dumped them into <strong>@prodmindai</strong> and got a complete product spec in 15 seconds. My co-founder was convinced I'd spent 3 hours on it 😂 This is the real superpower.</p>
+        <div class="tweet-footer">
+          <span class="tweet-likes">❤️ 247</span>
+          <span>· 2 days ago</span>
+        </div>
+      </div>
+
+      <div class="tweet-card">
+        <div class="tweet-header">
+          <div class="tweet-avatar" style="background:linear-gradient(135deg,#059669,#0d9488)">SR</div>
+          <div>
+            <div class="tweet-author-name">Sneha Reddy</div>
+            <div class="tweet-author-handle">@sneha_builds</div>
+          </div>
+          <svg class="tweet-x-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </div>
+        <p class="tweet-text">The <strong>"Don't Build"</strong> feature alone is worth the subscription. We almost spent 2 sprints on a feature our users mentioned but didn't actually need. ProdMind caught it immediately. Saved us 3 weeks.</p>
+        <div class="tweet-footer">
+          <span class="tweet-likes">❤️ 183</span>
+          <span>· 5 days ago</span>
+        </div>
+      </div>
+
+      <div class="tweet-card">
+        <div class="tweet-header">
+          <div class="tweet-avatar" style="background:linear-gradient(135deg,#dc2626,#ea580c)">MP</div>
+          <div>
+            <div class="tweet-author-name">Mihail Popescu</div>
+            <div class="tweet-author-handle">@mihail_pm</div>
+          </div>
+          <svg class="tweet-x-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </div>
+        <p class="tweet-text">As a solo PM at a startup, I was drowning in user feedback. <strong>ProdMind</strong> is now my first step after every user research session. It's like having a senior PM review my notes instantly. Game changer.</p>
+        <div class="tweet-footer">
+          <span class="tweet-likes">❤️ 412</span>
+          <span>· 1 week ago</span>
+        </div>
+      </div>
+
+      <div class="tweet-card">
+        <div class="tweet-header">
+          <div class="tweet-avatar" style="background:linear-gradient(135deg,#d97706,#ca8a04)">RG</div>
+          <div>
+            <div class="tweet-author-name">Rohan Gupta</div>
+            <div class="tweet-author-handle">@rohang_indie · IH</div>
+          </div>
+          <svg class="tweet-x-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </div>
+        <p class="tweet-text">I've used Notion AI, ChatGPT, everything. None of them understood <em>product management</em>. ProdMind actually knows what a Quick Win vs. Big Bet means. It thinks like a PM, not a chatbot. Huge diff.</p>
+        <div class="tweet-footer">
+          <span class="tweet-likes">❤️ 298</span>
+          <span>· 3 days ago</span>
+        </div>
+      </div>
+
+      <div class="tweet-card">
+        <div class="tweet-header">
+          <div class="tweet-avatar" style="background:linear-gradient(135deg,#7c3aed,#9333ea)">PK</div>
+          <div>
+            <div class="tweet-author-name">Priya Krishnan</div>
+            <div class="tweet-author-handle">@priya_makes · S23</div>
+          </div>
+          <svg class="tweet-x-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </div>
+        <p class="tweet-text">The interview questions it generates are 10x better than what I'd come up with on my own. Following the Mom Test perfectly. My next user calls are going to be so much more useful. 🙌</p>
+        <div class="tweet-footer">
+          <span class="tweet-likes">❤️ 167</span>
+          <span>· 4 days ago</span>
+        </div>
+      </div>
+
+      <div class="tweet-card">
+        <div class="tweet-header">
+          <div class="tweet-avatar" style="background:linear-gradient(135deg,#0ea5e9,#2563eb)">NK</div>
+          <div>
+            <div class="tweet-author-name">Neel Khanna</div>
+            <div class="tweet-author-handle">@neel_cto</div>
+          </div>
+          <svg class="tweet-x-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </div>
+        <p class="tweet-text">Our PM used <strong>ProdMind</strong> before our last sprint planning. For the first time ever, there was ZERO debate about what to build next. The data was so clear. This thing pays for itself in one meeting.</p>
+        <div class="tweet-footer">
+          <span class="tweet-likes">❤️ 534</span>
+          <span>· 1 week ago</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PRICING ════════════════════════════════════════ -->
+<section class="pricing" id="pricing">
+  <div class="container" style="text-align:center">
+    <span class="section-label">✦ Pricing</span>
+    <h2 class="section-title">Honest pricing for every stage</h2>
+    <p class="section-sub" style="margin:0 auto 32px">Start free. Upgrade when you're ready. Cancel any time.</p>
+
+    <!-- Toggle -->
+    <div style="display:flex;justify-content:center">
+      <div class="pricing-toggle-wrap">
+        <span class="pricing-toggle-label active" id="label-monthly">Monthly</span>
+        <div class="toggle-switch" id="billing-toggle">
+          <div class="toggle-knob"></div>
+        </div>
+        <span class="pricing-toggle-label" id="label-annual">Annual</span>
+        <span class="save-badge">Save 30%</span>
+      </div>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Free -->
+      <div class="card pricing-card">
+        <div class="plan-name">Starter</div>
+        <div class="price-wrap">
+          <span class="price-amount" id="price-free">$0</span>
+          <span class="price-period">/month</span>
+        </div>
+        <p class="plan-desc">For solo founders just getting started with user research.</p>
+        <ul class="plan-features">
+          <li class="plan-feature">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            5 analyses per month
+          </li>
+          <li class="plan-feature">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Pain Points + Quick Wins
+          </li>
+          <li class="plan-feature">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Analysis history (last 30 days)
+          </li>
+          <li class="plan-feature">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Copy to clipboard
+          </li>
+          <li class="plan-feature disabled">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            PDF Export
+          </li>
+          <li class="plan-feature disabled">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Notion / Linear integration
+          </li>
+        </ul>
+        <a href="signup.html" class="btn btn-secondary btn-block">Get Started Free</a>
+      </div>
+
+      <!-- Pro (Popular) -->
+      <div class="card pricing-card popular">
+        <div class="popular-badge">⭐ Most Popular</div>
+        <div class="plan-name">Pro</div>
+        <div class="price-wrap">
+          <span class="price-amount" id="price-pro">$29</span>
+          <span class="price-period">/month</span>
+        </div>
+        <p class="plan-desc">For PMs and founders doing regular user research every sprint.</p>
+        <ul class="plan-features">
+          <li class="plan-feature">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <strong>50 analyses per month</strong>
+          </li>
+          <li class="plan-feature">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            All 5 output sections
+          </li>
+          <li class="plan-feature">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Unlimited history
+          </li>
+          <li class="plan-feature">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            PDF & Markdown export
+          </li>
+          <li class="plan-feature">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Priority AI processing
+          </li>
+          <li class="plan-feature">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Email support
+          </li>
+        </ul>
+        <a href="signup.html" class="btn btn-primary btn-block">Start Pro Free Trial</a>
+      </div>
+
+      <!-- Team -->
+      <div class="card pricing-card">
+        <div class="plan-name">Team</div>
+        <div class="price-wrap">
+          <span class="price-amount" id="price-team">$79</span>
+          <span class="price-period">/month</span>
+        </div>
+        <p class="plan-desc">For product teams running continuous discovery across multiple squads.</p>
+        <ul class="plan-features">
+          <li class="plan-feature">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <strong>Unlimited analyses</strong>
+          </li>
+          <li class="plan-feature">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Up to 5 team seats
+          </li>
+          <li class="plan-feature">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Notion + Linear integration
+          </li>
+          <li class="plan-feature">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Shared analysis workspace
+          </li>
+          <li class="plan-feature">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Custom AI prompt tuning
+          </li>
+          <li class="plan-feature">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Slack bot + Slack alerts
+          </li>
+        </ul>
+        <a href="contact.html" class="btn btn-secondary btn-block">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ══════════════════════════════════════ -->
+<section class="testimonials">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:56px">
+      <span class="section-label">✦ Testimonials</span>
+      <h2 class="section-title">Trusted by builders worldwide</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="card testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"I went from 3 hours of post-interview analysis to 15 seconds. The output quality is better than anything I'd produce manually. ProdMind has fundamentally changed how I do product discovery."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">VN</div>
+          <div class="author-info">
+            <div class="author-name">Vikram Nair</div>
+            <div class="author-title">CPO at Fintech Startup · YC S23</div>
+          </div>
+        </div>
+      </div>
+      <div class="card testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Every indie hacker needs this. I'm a one-person team. Having an AI that thinks like a senior PM when analyzing my user calls is like having a co-founder I can't afford to hire."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">TK</div>
+          <div class="author-info">
+            <div class="author-name">Tanveer Khan</div>
+            <div class="author-title">Indie Hacker · $8k MRR</div>
+          </div>
+        </div>
+      </div>
+      <div class="card testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"We've integrated ProdMind into our bi-weekly discovery cycle. Our sprint velocity shot up because we stopped debating what to build. The data just makes it obvious. Highly recommend."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">AS</div>
+          <div class="author-info">
+            <div class="author-name">Amara Singh</div>
+            <div class="author-title">Head of Product · Series A SaaS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ════════════════════════════════════════════ -->
+<section style="padding:100px 0;background:var(--bg-secondary);border-top:1px solid var(--border)">
+  <div class="container" style="text-align:center">
+    <span class="section-label">✦ Questions</span>
+    <h2 class="section-title" style="margin-bottom:12px">Frequently asked questions</h2>
+    <p class="section-sub" style="margin:0 auto 52px">Can't find your answer? <a href="contact.html" style="color:var(--accent-purple-light)">Contact us →</a></p>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Is my user data safe and private?
+          <div class="faq-icon">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </button>
+        <div class="faq-answer"><p>Absolutely. Your user interview data is never stored on our servers after analysis completes. All analysis happens in-memory and is discarded immediately. We use Firebase for account data only — not your interview content. Your users' privacy is protected.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How is this different from just using ChatGPT?
+          <div class="faq-icon">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </button>
+        <div class="faq-answer"><p>ChatGPT gives you generic advice. ProdMind is purpose-built for product management with the Mom Test framework, YC playbook principles, and structured output formats (Quick Wins vs Big Bets) built in. You'd need hours of prompt engineering to get ChatGPT to output what ProdMind produces in one click.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What kind of input works best?
+          <div class="faq-icon">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </button>
+        <div class="faq-answer"><p>Anything goes — raw interview transcripts, Loom call notes, support ticket summaries, Twitter feedback, NPS comments, or even messy voice-memo transcriptions. We recommend at least 2-3 user responses for meaningful pattern detection, but 5+ gives the best results.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Can I cancel my subscription any time?
+          <div class="faq-icon">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </button>
+        <div class="faq-answer"><p>Yes, always. No questions asked, no lock-ins. Cancel from your Settings page at any time and you'll keep access until the end of your billing period. We believe in earning your subscription every month.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Does it work for B2B and B2C products?
+          <div class="faq-icon">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </button>
+        <div class="faq-answer"><p>Yes, ProdMind works brilliantly for both. You tell it what you're building (context field), and the AI adapts its analysis framework accordingly. Enterprise SaaS, consumer apps, developer tools, marketplaces — it's been tested across all categories.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What languages does it support?
+          <div class="faq-icon">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </button>
+        <div class="faq-answer"><p>Gemini 2.0 Flash supports all major languages. Paste user responses in Hindi, Spanish, French, Portuguese, German, Japanese, or any other language — the AI understands and analyzes them. Output is delivered in English by default.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BIG CTA ════════════════════════════════════════ -->
+<section class="cta-section">
+  <div class="cta-glow"></div>
+  <div class="container" style="position:relative;z-index:1">
+    <h2>Stop guessing.<br/><span class="gradient-text">Start building what matters.</span></h2>
+    <p>Join 12,400+ founders who get their product spec in 10 seconds — not 10 hours.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a href="signup.html" class="btn btn-primary btn-lg" id="cta-final">✦ Get Started Free — No Card Needed</a>
+      <a href="contact.html" class="btn btn-ghost btn-lg">Talk to us →</a>
+    </div>
+    <p style="margin-top:20px;font-size:0.875rem;color:var(--text-tertiary)">Free forever · No credit card · 60-second setup</p>
+  </div>
+</section>
+
+<!-- ══ FOOTER ════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/><path d="M19 3v4"/><path d="M21 5h-4"/></svg>
+          ProdMind
+        </a>
+        <p class="footer-tagline">Your AI product manager for user research. Turn messy interviews into clean product specs in 10 seconds. Built for founders who ship fast.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#pricing">Pricing</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 ProdMind AI · Made with ❤️ for founders</span>
+      <span>Powered by Google Gemini 2.0 Flash</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Navbar scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Animated counters
+  function animateCounter(id, target, suffix = '') {
+    const el = document.getElementById(id);
+    let start = 0;
+    const duration = 2000;
+    const startTime = performance.now();
+    const step = (now) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.floor(eased * target);
+      el.textContent = current.toLocaleString() + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
+  // IntersectionObserver for counter trigger
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        animateCounter('counter-1', 12400, '+');
+        animateCounter('counter-2', 48700, '+');
+        statsObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+  const statsEl = document.getElementById('counter-1');
+  if (statsEl) statsObserver.observe(statsEl.closest('.stats-bar'));
+
+  // FAQ accordion
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Pricing toggle
+  const toggle = document.getElementById('billing-toggle');
+  const labelM = document.getElementById('label-monthly');
+  const labelA = document.getElementById('label-annual');
+  let isAnnual = false;
+
+  const prices = { monthly: ['$0','$29','$79'], annual: ['$0','$20','$55'] };
+
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      isAnnual = !isAnnual;
+      toggle.classList.toggle('annual', isAnnual);
+      labelM.classList.toggle('active', !isAnnual);
+      labelA.classList.toggle('active', isAnnual);
+      const p = isAnnual ? prices.annual : prices.monthly;
+      document.getElementById('price-free').textContent = p[0];
+      document.getElementById('price-pro').textContent = p[1];
+      document.getElementById('price-team').textContent = p[2];
+    });
+  }
+
+  // Smooth scroll for anchors
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // Stagger animation
+  const staggerObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll(':scope > *').forEach((child, i) => {
+          child.style.animationDelay = `${i * 0.1}s`;
+          child.classList.add('animate-fadeInUp');
+        });
+        staggerObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.stagger').forEach(el => staggerObserver.observe(el));
+
+  // Bento card mouse-track glow
+  document.querySelectorAll('.bento-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const x = ((e.clientX - r.left) / r.width * 100).toFixed(1);
+      const y = ((e.clientY - r.top) / r.height * 100).toFixed(1);
+      card.style.setProperty('--mx', x + '%');
+      card.style.setProperty('--my', y + '%');
+    });
+  });
+</script>
+</body>
+</html>

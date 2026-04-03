@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings — ProdMind AI</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🧠</text></svg>" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- ══ SIDEBAR ══ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="sidebar-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/><path d="M19 3v4"/><path d="M21 5h-4"/></svg>
+        ProdMind
+      </a>
+      <div class="sidebar-user">
+        <div class="user-avatar" id="user-avatar">?</div>
+        <div class="user-info">
+          <div class="user-name" id="user-name">Loading…</div>
+          <div class="user-plan" id="user-plan">free</div>
+        </div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="nav-item">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Dashboard
+      </a>
+      <a href="history.html" class="nav-item">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10"/><polyline points="12 6 12 12 16 14"/></svg>
+        My Analyses
+      </a>
+      <a href="dashboard.html" class="nav-item">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        New Analysis
+      </a>
+      <a href="settings.html" class="nav-item active">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+        Settings
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="usage-label">
+        <span>Analyses used</span>
+        <span id="usage-count">0/5</span>
+      </div>
+      <div class="usage-bar">
+        <div class="usage-fill" id="usage-fill" style="width: 0%"></div>
+      </div>
+      <button class="btn btn-primary btn-block btn-sm" id="logout-btn">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Log Out
+      </button>
+    </div>
+  </aside>
+
+  <!-- ══ MAIN ══ -->
+  <main class="main-content">
+    <header class="topbar">
+      <div class="topbar-greeting">
+        <h2>Settings</h2>
+        <p>Manage your account and preferences</p>
+      </div>
+    </header>
+
+    <div class="page-content">
+      <div class="settings-layout">
+
+        <!-- Tabs Sidebar -->
+        <div class="settings-tabs">
+          <button class="settings-tab active" onclick="switchTab('profile')" id="tab-profile">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Profile
+          </button>
+          <button class="settings-tab" onclick="switchTab('billing')" id="tab-billing">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            Plan & Billing
+          </button>
+          <button class="settings-tab" onclick="switchTab('integrations')" id="tab-integrations">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
+            Integrations
+          </button>
+          <button class="settings-tab" onclick="switchTab('notifications')" id="tab-notifications">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            Notifications
+          </button>
+          <button class="settings-tab" onclick="switchTab('danger')" id="tab-danger">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Danger Zone
+          </button>
+        </div>
+
+        <!-- Panels -->
+        <div style="flex:1">
+
+          <!-- Profile Panel -->
+          <div class="settings-panel active" id="panel-profile">
+            <div class="card" style="padding:32px">
+              <div class="settings-section">
+                <div class="settings-section-title">Profile</div>
+                <div class="settings-section-desc">Your display name and email address.</div>
+                <div class="avatar-upload-wrap">
+                  <div class="avatar-large" id="settings-avatar">?</div>
+                  <div>
+                    <button class="btn btn-secondary btn-sm" id="change-avatar-btn">Change Avatar</button>
+                    <p style="font-size:0.8125rem;color:var(--text-tertiary);margin-top:6px">PNG or JPG up to 2MB</p>
+                  </div>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+                  <div class="input-group">
+                    <label class="input-label" for="s-name">Full Name</label>
+                    <div class="input-wrapper">
+                      <input class="input-field" type="text" id="s-name" placeholder="Your name" />
+                    </div>
+                  </div>
+                  <div class="input-group">
+                    <label class="input-label" for="s-email">Email</label>
+                    <div class="input-wrapper">
+                      <input class="input-field" type="email" id="s-email" placeholder="you@company.com" disabled />
+                    </div>
+                  </div>
+                </div>
+                <div class="input-group" style="margin-bottom:20px">
+                  <label class="input-label" for="s-company">Company / Project</label>
+                  <div class="input-wrapper">
+                    <input class="input-field" type="text" id="s-company" placeholder="e.g. My SaaS Startup" />
+                  </div>
+                </div>
+                <button class="btn btn-primary btn-sm" id="save-profile-btn">Save Changes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Billing Panel -->
+          <div class="settings-panel" id="panel-billing">
+            <div class="card" style="padding:32px">
+              <div class="settings-section">
+                <div class="settings-section-title">Current Plan</div>
+                <div class="settings-section-desc">Your usage and plan details.</div>
+
+                <div style="background:var(--bg-tertiary);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px;margin-bottom:24px">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+                    <div>
+                      <div style="font-size:1.125rem;font-weight:700" id="billing-plan-name">Free Plan</div>
+                      <div style="font-size:0.875rem;color:var(--text-tertiary)">Renews monthly</div>
+                    </div>
+                    <span class="pill pill-purple" id="billing-plan-badge">FREE</span>
+                  </div>
+                  <div style="margin-bottom:12px">
+                    <div style="display:flex;justify-content:space-between;font-size:0.875rem;color:var(--text-secondary);margin-bottom:8px">
+                      <span>Analyses used this month</span>
+                      <span id="billing-usage">0 / 5</span>
+                    </div>
+                    <div class="usage-bar" style="height:8px">
+                      <div class="usage-fill" id="billing-usage-fill" style="width:0%"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="background:linear-gradient(135deg,rgba(124,58,237,0.1),rgba(79,70,229,0.05));border:1px solid rgba(124,58,237,0.3);border-radius:var(--r-lg);padding:24px;margin-bottom:24px">
+                  <div style="font-size:0.875rem;font-weight:600;color:var(--accent-purple-light);margin-bottom:8px">🚀 Upgrade to Pro</div>
+                  <div style="font-weight:700;font-size:1.0625rem;margin-bottom:8px">Get 50 analyses/month + PDF export</div>
+                  <div style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:16px">$29/month. Cancel any time. 7-day free trial.</div>
+                  <button class="btn btn-primary btn-sm" onclick="showToast('Stripe integration coming soon! 🔜','info')">Upgrade to Pro →</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Integrations Panel -->
+          <div class="settings-panel" id="panel-integrations">
+            <div class="card" style="padding:32px">
+              <div class="settings-section">
+                <div class="settings-section-title">Integrations</div>
+                <div class="settings-section-desc">Connect ProdMind with your existing workflow tools.</div>
+
+                <div class="integration-card">
+                  <div class="integration-info">
+                    <div class="integration-icon">📝</div>
+                    <div>
+                      <div class="integration-name">Notion</div>
+                      <div class="integration-desc">Export analyses directly to a Notion database</div>
+                    </div>
+                  </div>
+                  <span class="coming-soon-chip">Coming Soon</span>
+                </div>
+
+                <div class="integration-card">
+                  <div class="integration-info">
+                    <div class="integration-icon">⚡</div>
+                    <div>
+                      <div class="integration-name">Linear</div>
+                      <div class="integration-desc">Create issues directly from your Quick Wins</div>
+                    </div>
+                  </div>
+                  <span class="coming-soon-chip">Coming Soon</span>
+                </div>
+
+                <div class="integration-card">
+                  <div class="integration-info">
+                    <div class="integration-icon">🎯</div>
+                    <div>
+                      <div class="integration-name">Jira</div>
+                      <div class="integration-desc">Push product specs to your Jira backlog</div>
+                    </div>
+                  </div>
+                  <span class="coming-soon-chip">Coming Soon</span>
+                </div>
+
+                <div class="integration-card">
+                  <div class="integration-info">
+                    <div class="integration-icon">💬</div>
+                    <div>
+                      <div class="integration-name">Slack</div>
+                      <div class="integration-desc">Get analysis summaries in your Slack channel</div>
+                    </div>
+                  </div>
+                  <span class="coming-soon-chip">Coming Soon</span>
+                </div>
+
+                <div class="integration-card">
+                  <div class="integration-info">
+                    <div class="integration-icon">🔗</div>
+                    <div>
+                      <div class="integration-name">Zapier</div>
+                      <div class="integration-desc">Connect to 5,000+ apps via Zapier workflows</div>
+                    </div>
+                  </div>
+                  <span class="coming-soon-chip">Coming Soon</span>
+                </div>
+
+                <div style="margin-top:24px;padding:16px;background:var(--bg-tertiary);border:1px solid var(--border);border-radius:var(--r-md);font-size:0.875rem;color:var(--text-secondary)">
+                  💡 Want a specific integration? <a href="contact.html" style="color:var(--accent-purple-light)">Let us know →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notifications Panel -->
+          <div class="settings-panel" id="panel-notifications">
+            <div class="card" style="padding:32px">
+              <div class="settings-section">
+                <div class="settings-section-title">Email Notifications</div>
+                <div class="settings-section-desc">Choose what you want to hear about.</div>
+
+                <div style="display:flex;flex-direction:column;gap:16px">
+                  <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:var(--bg-tertiary);border:1px solid var(--border);border-radius:var(--r-md)">
+                    <div>
+                      <div style="font-weight:600;font-size:0.9375rem">Weekly digest</div>
+                      <div style="font-size:0.8125rem;color:var(--text-tertiary)">Summary of your analyses every Monday</div>
+                    </div>
+                    <label style="cursor:pointer">
+                      <input type="checkbox" id="notif-digest" checked style="accent-color:var(--accent-purple);width:18px;height:18px" />
+                    </label>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:var(--bg-tertiary);border:1px solid var(--border);border-radius:var(--r-md)">
+                    <div>
+                      <div style="font-weight:600;font-size:0.9375rem">Product updates</div>
+                      <div style="font-size:0.8125rem;color:var(--text-tertiary)">New features and improvements</div>
+                    </div>
+                    <label style="cursor:pointer">
+                      <input type="checkbox" id="notif-updates" checked style="accent-color:var(--accent-purple);width:18px;height:18px" />
+                    </label>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:var(--bg-tertiary);border:1px solid var(--border);border-radius:var(--r-md)">
+                    <div>
+                      <div style="font-weight:600;font-size:0.9375rem">Tips & tutorials</div>
+                      <div style="font-size:0.8125rem;color:var(--text-tertiary)">PM tips and how-to guides</div>
+                    </div>
+                    <label style="cursor:pointer">
+                      <input type="checkbox" id="notif-tips" style="accent-color:var(--accent-purple);width:18px;height:18px" />
+                    </label>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:var(--bg-tertiary);border:1px solid var(--border);border-radius:var(--r-md)">
+                    <div>
+                      <div style="font-weight:600;font-size:0.9375rem">Usage warnings</div>
+                      <div style="font-size:0.8125rem;color:var(--text-tertiary)">Alert when approaching your limit</div>
+                    </div>
+                    <label style="cursor:pointer">
+                      <input type="checkbox" id="notif-usage" checked style="accent-color:var(--accent-purple);width:18px;height:18px" />
+                    </label>
+                  </div>
+                </div>
+                <button class="btn btn-primary btn-sm" style="margin-top:20px" onclick="showToast('Notification preferences saved ✓','success')">Save Preferences</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Danger Zone Panel -->
+          <div class="settings-panel" id="panel-danger">
+            <div class="card" style="padding:32px">
+              <div class="settings-section">
+                <div class="settings-section-title" style="color:var(--accent-red)">⚠️ Danger Zone</div>
+                <div class="settings-section-desc">These actions are permanent and cannot be undone.</div>
+
+                <div class="danger-zone">
+                  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
+                    <div>
+                      <div style="font-weight:600;margin-bottom:4px">Delete all analyses</div>
+                      <div style="font-size:0.875rem;color:var(--text-secondary)">Permanently remove all your saved analyses and history.</div>
+                    </div>
+                    <button class="btn btn-sm" style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.25);color:var(--accent-red)" onclick="showToast('Type DELETE to confirm (feature coming soon)','error')">
+                      Delete All Data
+                    </button>
+                  </div>
+                  <div style="height:1px;background:rgba(239,68,68,0.15);margin:20px 0"></div>
+                  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
+                    <div>
+                      <div style="font-weight:600;margin-bottom:4px">Delete account</div>
+                      <div style="font-size:0.875rem;color:var(--text-secondary)">Permanently delete your account and all associated data.</div>
+                    </div>
+                    <button class="btn btn-sm" style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);color:var(--accent-red)" onclick="showToast('Please email support@prodmind.ai to delete your account.','error')">
+                      Delete Account
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div id="toast-container"></div>
+
+<script type="module">
+  import { auth, db } from './js/firebase-config.js';
+  import { onAuthStateChanged, signOut, updateProfile } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+  import { doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+
+  let currentUser = null;
+
+  onAuthStateChanged(auth, async (user) => {
+    if (!user) { window.location.href = 'login.html'; return; }
+    currentUser = user;
+
+    const name = user.displayName || 'Founder';
+    const initials = name.split(' ').map(w => w[0]).join('').toUpperCase().slice(0,2);
+    document.getElementById('user-avatar').textContent = initials;
+    document.getElementById('user-name').textContent = name;
+    document.getElementById('settings-avatar').textContent = initials;
+    document.getElementById('s-name').value = name;
+    document.getElementById('s-email').value = user.email || '';
+
+    try {
+      const snap = await getDoc(doc(db, 'users', user.uid));
+      if (snap.exists()) {
+        const d = snap.data();
+        const used = d.analysesUsed || 0;
+        const limit = d.analysesLimit || 5;
+        const plan = d.plan || 'free';
+        document.getElementById('user-plan').textContent = plan;
+        document.getElementById('usage-count').textContent = `${used}/${limit}`;
+        document.getElementById('usage-fill').style.width = `${Math.min((used/limit)*100,100)}%`;
+        document.getElementById('billing-usage').textContent = `${used} / ${limit}`;
+        document.getElementById('billing-usage-fill').style.width = `${Math.min((used/limit)*100,100)}%`;
+        document.getElementById('billing-plan-name').textContent = plan === 'pro' ? 'Pro Plan' : plan === 'team' ? 'Team Plan' : 'Free Plan';
+        document.getElementById('billing-plan-badge').textContent = plan.toUpperCase();
+        if (d.company) document.getElementById('s-company').value = d.company;
+      }
+    } catch {}
+  });
+
+  document.getElementById('save-profile-btn').addEventListener('click', async () => {
+    if (!currentUser) return;
+    const newName = document.getElementById('s-name').value.trim();
+    const company = document.getElementById('s-company').value.trim();
+    try {
+      await updateProfile(currentUser, { displayName: newName });
+      await updateDoc(doc(db, 'users', currentUser.uid), { name: newName, company });
+      showToast('Profile saved ✓', 'success');
+      const initials = newName.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2);
+      document.getElementById('user-avatar').textContent = initials;
+      document.getElementById('settings-avatar').textContent = initials;
+      document.getElementById('user-name').textContent = newName;
+    } catch { showToast('Failed to save. Try again.', 'error'); }
+  });
+
+  document.getElementById('logout-btn').addEventListener('click', async () => {
+    await signOut(auth);
+    window.location.href = 'login.html';
+  });
+</script>
+<script>
+  function switchTab(tab) {
+    document.querySelectorAll('.settings-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.settings-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+    document.getElementById('panel-' + tab).classList.add('active');
+  }
+
+  function showToast(msg, type = 'info') {
+    const c = document.getElementById('toast-container');
+    const t = document.createElement('div');
+    t.className = `toast ${type}`;
+    t.textContent = msg;
+    c.appendChild(t);
+    requestAnimationFrame(() => t.classList.add('show'));
+    setTimeout(() => { t.classList.remove('show'); setTimeout(() => t.remove(), 400); }, 3500);
+  }
+</script>
+</body>
+</html>

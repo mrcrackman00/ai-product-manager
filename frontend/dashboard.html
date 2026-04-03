@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — ProdMind AI</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🧠</text></svg>" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- ══ SIDEBAR ══════════════════════════════════════ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="sidebar-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/><path d="M19 3v4"/><path d="M21 5h-4"/></svg>
+        ProdMind
+      </a>
+      <div class="sidebar-user">
+        <div class="user-avatar" id="user-avatar">?</div>
+        <div class="user-info">
+          <div class="user-name" id="user-name">Loading…</div>
+          <div class="user-plan" id="user-plan">free</div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="nav-item active">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Dashboard
+      </a>
+      <a href="history.html" class="nav-item">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10"/><polyline points="12 6 12 12 16 14"/></svg>
+        My Analyses
+      </a>
+      <a href="#" class="nav-item" id="new-analysis-nav">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        New Analysis
+      </a>
+      <a href="settings.html" class="nav-item">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+        Settings
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="usage-label">
+        <span>Analyses used</span>
+        <span id="usage-count">0/5</span>
+      </div>
+      <div class="usage-bar">
+        <div class="usage-fill" id="usage-fill" style="width: 0%"></div>
+      </div>
+      <button class="btn btn-primary btn-block btn-sm" id="logout-btn">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Log Out
+      </button>
+    </div>
+  </aside>
+
+  <!-- ══ MAIN CONTENT ════════════════════════════════ -->
+  <main class="main-content">
+
+    <!-- Topbar -->
+    <header class="topbar">
+      <div class="topbar-greeting">
+        <h2 id="greeting">Good morning 👋</h2>
+        <p id="topbar-date">Loading date…</p>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-primary btn-sm" id="new-analysis-btn">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          New Analysis
+        </button>
+      </div>
+    </header>
+
+    <div class="page-content">
+
+      <!-- ── Stats ── -->
+      <div class="stats-row stagger" id="stats-row">
+        <div class="card stat-card">
+          <div class="stat-label">Total Analyses</div>
+          <div class="stat-value" id="stat-total">0</div>
+          <div class="stat-sub">all time</div>
+        </div>
+        <div class="card stat-card">
+          <div class="stat-label">Pain Points Found</div>
+          <div class="stat-value" id="stat-pains">0</div>
+          <div class="stat-sub">across all analyses</div>
+        </div>
+        <div class="card stat-card">
+          <div class="stat-label">Quick Wins Identified</div>
+          <div class="stat-value" id="stat-wins">0</div>
+          <div class="stat-sub">build this week</div>
+        </div>
+        <div class="card stat-card">
+          <div class="stat-label">Hours Saved</div>
+          <div class="stat-value" id="stat-hours">0</div>
+          <div class="stat-sub">vs manual analysis</div>
+        </div>
+      </div>
+
+      <!-- ── Analysis Panel ── -->
+      <div class="card analysis-panel">
+        <div class="panel-title">Product Spec Generator</div>
+
+        <!-- Step Indicator -->
+        <div class="step-indicator" id="step-indicator">
+          <div class="step-item active" id="si-1">
+            <div class="step-circle">1</div>
+            <div class="step-text">Add Responses</div>
+          </div>
+          <div class="step-line" id="sl-1"></div>
+          <div class="step-item" id="si-2">
+            <div class="step-circle">2</div>
+            <div class="step-text">AI Analysis</div>
+          </div>
+          <div class="step-line" id="sl-2"></div>
+          <div class="step-item" id="si-3">
+            <div class="step-circle">3</div>
+            <div class="step-text">Your Spec</div>
+          </div>
+        </div>
+
+        <!-- STEP 1: Input -->
+        <div id="step-1" class="input-step">
+          <div class="product-input-row">
+            <label for="product-ctx" class="text-sm font-medium" style="white-space:nowrap">What are you building?</label>
+            <input
+              type="text"
+              id="product-ctx"
+              class="input-field flex-1"
+              placeholder="e.g. Meal planning app for busy Indian professionals"
+              maxlength="200"
+            />
+          </div>
+
+          <div class="responses-area" id="responses-area">
+            <!-- Rows injected by JS -->
+          </div>
+
+          <button class="add-response-btn" id="add-response-btn" type="button">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add another response
+          </button>
+
+          <div class="analyze-row">
+            <div class="kbd-hint">Press <kbd>Ctrl</kbd>+<kbd>Enter</kbd> to analyze</div>
+            <button class="btn btn-primary btn-lg" id="analyze-btn" type="button">
+              <span class="btn-text">✦ Analyze Now →</span>
+              <div class="btn-spinner"></div>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 2: Loading -->
+        <div id="step-2" class="loading-step hidden">
+          <div class="brain-anim">
+            <svg width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg>
+          </div>
+          <div class="loading-message" id="loading-msg">Warming up the AI brain…</div>
+          <div class="progress-track">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+          <p class="text-sm text-muted">This takes 10–20 seconds. Sit tight ☕</p>
+        </div>
+
+        <!-- STEP 3: Results -->
+        <div id="step-3" class="results-step hidden">
+          <div class="result-tabs" id="result-tabs">
+            <button class="result-tab active" data-tab="pain">🔥 Pain Points</button>
+            <button class="result-tab" data-tab="wins">⚡ Quick Wins</button>
+            <button class="result-tab" data-tab="bets">🚀 Big Bets</button>
+            <button class="result-tab" data-tab="avoid">🚫 Don't Build</button>
+            <button class="result-tab" data-tab="questions">🎯 Interview Qs</button>
+          </div>
+
+          <div id="tab-pain" class="tab-panel active">
+            <div class="result-content" id="content-pain"><!-- Rendered by JS --></div>
+          </div>
+          <div id="tab-wins" class="tab-panel">
+            <div class="result-content" id="content-wins"></div>
+          </div>
+          <div id="tab-bets" class="tab-panel">
+            <div class="result-content" id="content-bets"></div>
+          </div>
+          <div id="tab-avoid" class="tab-panel">
+            <div class="result-content" id="content-avoid"></div>
+          </div>
+          <div id="tab-questions" class="tab-panel">
+            <div class="result-content" id="content-questions"></div>
+          </div>
+
+          <div class="results-actions">
+            <button class="btn btn-secondary btn-sm" id="copy-btn">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Copy All
+            </button>
+            <button class="btn btn-secondary btn-sm" id="pdf-btn">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download PDF
+            </button>
+            <button class="btn btn-primary btn-sm" id="save-btn">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+              Save Analysis
+            </button>
+            <button class="btn btn-ghost btn-sm" id="reset-btn">Start Over</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- Toast -->
+<div id="toast-container"></div>
+
+<script type="module">
+  import { auth, db } from './js/firebase-config.js';
+  import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+  import { doc, getDoc, addDoc, updateDoc, increment, collection, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+
+  const BACKEND = 'http://127.0.0.1:8000';
+
+  let currentUser = null;
+  let currentResult = null;
+
+  // ── Auth Guard ──
+  onAuthStateChanged(auth, async (user) => {
+    if (!user) { window.location.href = 'login.html'; return; }
+    currentUser = user;
+    initUI(user);
+    loadUserData(user.uid);
+  });
+
+  async function initUI(user) {
+    const name = user.displayName || 'Founder';
+    const initials = name.split(' ').map(w => w[0]).join('').toUpperCase().slice(0,2);
+    document.getElementById('user-avatar').textContent = initials;
+    document.getElementById('user-name').textContent = name;
+
+    const hour = new Date().getHours();
+    const greet = hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';
+    document.getElementById('greeting').textContent = `${greet}, ${name.split(' ')[0]} 👋`;
+    document.getElementById('topbar-date').textContent = new Date().toLocaleDateString('en-US', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
+  }
+
+  async function loadUserData(uid) {
+    try {
+      const snap = await getDoc(doc(db, 'users', uid));
+      if (!snap.exists()) return;
+      const data = snap.data();
+      const used  = data.analysesUsed || 0;
+      const limit = data.analysesLimit || 5;
+      const plan  = data.plan || 'free';
+
+      document.getElementById('user-plan').textContent = plan;
+      document.getElementById('usage-count').textContent = `${used}/${limit}`;
+      const pct = Math.min((used / limit) * 100, 100);
+      document.getElementById('usage-fill').style.width = `${pct}%`;
+      if (pct >= 80) document.getElementById('usage-fill').classList.add('danger');
+
+      // Stats
+      animateCount('stat-total', used);
+      animateCount('stat-pains', used * 3);
+      animateCount('stat-wins',  used * 2);
+      animateCount('stat-hours', used * 3);
+    } catch {}
+  }
+
+  // ── Response Rows ──
+  let rowCount = 0;
+
+  function addResponseRow(placeholder = '') {
+    rowCount++;
+    const area = document.getElementById('responses-area');
+    const row = document.createElement('div');
+    row.className = 'response-row';
+    row.dataset.rowId = rowCount;
+    row.innerHTML = `
+      <div class="response-num">${rowCount}</div>
+      <div class="response-field-wrap">
+        <textarea
+          class="response-textarea"
+          placeholder="${placeholder || `User ${rowCount}: Paste what they said here…`}"
+          rows="2"
+          maxlength="800"
+          id="resp-${rowCount}"
+        ></textarea>
+        <span class="char-count" id="cc-${rowCount}">0/800</span>
+      </div>
+      <button class="remove-btn" onclick="removeRow(${rowCount})" title="Remove">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    `;
+    area.appendChild(row);
+    const ta = document.getElementById(`resp-${rowCount}`);
+    const cc = document.getElementById(`cc-${rowCount}`);
+    ta.addEventListener('input', () => { cc.textContent = `${ta.value.length}/800`; });
+  }
+
+  window.removeRow = (id) => {
+    const row = document.querySelector(`[data-row-id="${id}"]`);
+    if (row && document.querySelectorAll('.response-row').length > 1) row.remove();
+  };
+
+  // Init with 3 rows
+  addResponseRow();
+  addResponseRow();
+  addResponseRow();
+
+  document.getElementById('add-response-btn').addEventListener('click', () => addResponseRow());
+  document.getElementById('new-analysis-btn').addEventListener('click', resetToStep1);
+  document.getElementById('new-analysis-nav').addEventListener('click', (e) => { e.preventDefault(); resetToStep1(); });
+
+  // ── Analyze ──
+  const MESSAGES = [
+    'Reading between the lines…',
+    'Finding patterns in pain…',
+    'Consulting 1000 YC playbooks…',
+    'Extracting root causes…',
+    'Building your product spec…',
+    'Almost there…'
+  ];
+
+  async function runAnalysis() {
+    const responses = [...document.querySelectorAll('.response-textarea')]
+      .map(t => t.value.trim()).filter(Boolean);
+
+    if (responses.length < 2) {
+      return showToast('Add at least 2 user responses to analyze.', 'error');
+    }
+
+    const context = document.getElementById('product-ctx').value.trim();
+
+    // Show step 2
+    setStep(2);
+    startLoadingAnimation();
+
+    try {
+      const res = await fetch(`${BACKEND}/api/analyze`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          responses,
+          product_context: context,
+          user_id: currentUser.uid
+        })
+      });
+
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+
+      if (!data.success) throw new Error(data.error || 'Analysis failed');
+
+      currentResult = data.data;
+      renderResults(data.data);
+      setStep(3);
+
+    } catch (err) {
+      showToast(`Analysis failed: ${err.message}`, 'error');
+      setStep(1);
+    }
+  }
+
+  function startLoadingAnimation() {
+    let i = 0;
+    const msgEl = document.getElementById('loading-msg');
+    const fill   = document.getElementById('progress-fill');
+    const duration = 18000;
+    const start = Date.now();
+
+    const msgInterval = setInterval(() => {
+      i = (i + 1) % MESSAGES.length;
+      msgEl.style.opacity = 0;
+      setTimeout(() => { msgEl.textContent = MESSAGES[i]; msgEl.style.opacity = 1; }, 200);
+    }, 2800);
+
+    msgEl.style.transition = 'opacity 0.2s ease';
+
+    const fillInterval = setInterval(() => {
+      const elapsed = Date.now() - start;
+      const pct = Math.min((elapsed / duration) * 90, 90);
+      fill.style.width = `${pct}%`;
+      if (pct >= 90) clearInterval(fillInterval);
+    }, 100);
+
+    window._clearLoadingAnim = () => {
+      clearInterval(msgInterval);
+      clearInterval(fillInterval);
+      fill.style.width = '100%';
+    };
+  }
+
+  function renderResults(data) {
+    if (window._clearLoadingAnim) window._clearLoadingAnim();
+
+    // Simple markdown-like render
+    const render = (text) => {
+      if (!text) return '<p class="text-muted">No data for this section.</p>';
+      return text
+        .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+        .replace(/^### (.+)$/gm, '<h3 style="font-size:1rem;margin:16px 0 8px;color:var(--text-secondary)">$1</h3>')
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/^[•\-*] (.+)$/gm, '<li>$1</li>')
+        .replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>')
+        .replace(/^\d+\. (.+)$/gm, '<li>$1</li>')
+        .replace(/\n\n+/g, '</p><p>')
+        .replace(/^([^<\n].+)$/gm, '<p>$1</p>');
+    };
+
+    // Split the full text by section headers
+    const full = data.full_text || '';
+    const sections = {
+      pain:      extractSection(full, '🔥 Top Pain Points', '⚡'),
+      wins:      extractSection(full, '⚡ Quick Wins', '🚀'),
+      bets:      extractSection(full, '🚀 Big Bets', '🚫'),
+      avoid:     extractSection(full, '🚫 What NOT To Build', '📊'),
+      questions: extractSection(full, '🎯', null) ||
+                 extractSection(full, '💬 Most Powerful', null) ||
+                 data.interview_questions || ''
+    };
+
+    document.getElementById('content-pain').innerHTML      = render(sections.pain || full);
+    document.getElementById('content-wins').innerHTML      = render(sections.wins);
+    document.getElementById('content-bets').innerHTML      = render(sections.bets);
+    document.getElementById('content-avoid').innerHTML     = render(sections.avoid);
+    document.getElementById('content-questions').innerHTML = render(sections.questions);
+  }
+
+  function extractSection(text, start, end) {
+    const si = text.indexOf(start);
+    if (si === -1) return '';
+    const ei = end ? text.indexOf(end, si + start.length) : text.length;
+    return text.slice(si, ei === -1 ? text.length : ei).trim();
+  }
+
+  // ── Tabs ──
+  document.querySelectorAll('.result-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.result-tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(`tab-${btn.dataset.tab}`).classList.add('active');
+    });
+  });
+
+  // ── Step management ──
+  function setStep(n) {
+    document.getElementById('step-1').classList.toggle('hidden', n !== 1);
+    document.getElementById('step-2').classList.toggle('hidden', n !== 2);
+    document.getElementById('step-3').classList.toggle('hidden', n !== 3);
+
+    ['si-1','si-2','si-3'].forEach((id, i) => {
+      const el = document.getElementById(id);
+      el.classList.remove('active','done');
+      if (i + 1 === n)  el.classList.add('active');
+      if (i + 1 < n)    el.classList.add('done');
+    });
+  }
+
+  function resetToStep1() {
+    currentResult = null;
+    document.getElementById('responses-area').innerHTML = '';
+    rowCount = 0;
+    addResponseRow(); addResponseRow(); addResponseRow();
+    document.getElementById('product-ctx').value = '';
+    setStep(1);
+  }
+
+  // Keyboard shortcut
+  document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') runAnalysis();
+  });
+
+  document.getElementById('analyze-btn').addEventListener('click', runAnalysis);
+  document.getElementById('reset-btn').addEventListener('click', resetToStep1);
+
+  // ── Actions ──
+  document.getElementById('copy-btn').addEventListener('click', () => {
+    if (!currentResult) return;
+    navigator.clipboard.writeText(currentResult.full_text || JSON.stringify(currentResult, null, 2))
+      .then(() => showToast('Copied to clipboard ✓', 'success'));
+  });
+
+  document.getElementById('pdf-btn').addEventListener('click', () => window.print());
+
+  document.getElementById('save-btn').addEventListener('click', async () => {
+    if (!currentResult || !currentUser) return;
+    try {
+      await addDoc(collection(db, 'users', currentUser.uid, 'analyses'), {
+        product: document.getElementById('product-ctx').value || 'Untitled',
+        result: currentResult,
+        createdAt: serverTimestamp()
+      });
+      await updateDoc(doc(db, 'users', currentUser.uid), { analysesUsed: increment(1) });
+      showToast('Analysis saved ✓', 'success');
+      loadUserData(currentUser.uid);
+    } catch { showToast('Failed to save. Try again.', 'error'); }
+  });
+
+  // ── Logout ──
+  document.getElementById('logout-btn').addEventListener('click', async () => {
+    await signOut(auth);
+    window.location.href = 'login.html';
+  });
+
+  // ── Toast ──
+  function showToast(msg, type = 'info') {
+    const container = document.getElementById('toast-container');
+    const t = document.createElement('div');
+    t.className = `toast ${type}`;
+    t.textContent = msg;
+    container.appendChild(t);
+    requestAnimationFrame(() => t.classList.add('show'));
+    setTimeout(() => { t.classList.remove('show'); setTimeout(() => t.remove(), 400); }, 3500);
+  }
+
+  // ── Animated counter ──
+  function animateCount(id, target) {
+    const el = document.getElementById(id);
+    let start = 0;
+    const step = () => {
+      start += Math.ceil((target - start) / 8);
+      el.textContent = start;
+      if (start < target) requestAnimationFrame(step);
+      else el.textContent = target;
+    };
+    requestAnimationFrame(step);
+  }
+</script>
+</body>
+</html>

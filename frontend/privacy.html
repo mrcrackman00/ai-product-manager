@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — ProdMind AI</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🧠</text></svg>" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/landing.css" />
+</head>
+<body>
+<nav class="navbar scrolled">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/><path d="M19 3v4"/><path d="M21 5h-4"/></svg>
+      ProdMind
+    </a>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-ghost btn-sm">Log In</a>
+      <a href="signup.html" class="btn btn-primary btn-sm">Get Started →</a>
+    </div>
+  </div>
+</nav>
+
+<div style="padding-top:68px">
+  <div class="page-header-inner" style="background:var(--bg-secondary);border-bottom:1px solid var(--border)">
+    <div class="container">
+      <h1>Privacy Policy</h1>
+      <p>Last updated: April 3, 2025 · Effective immediately</p>
+    </div>
+  </div>
+
+  <div class="container" style="padding:60px 24px">
+    <div class="legal-content">
+
+      <div class="legal-toc">
+        <h3>Table of Contents</h3>
+        <ul>
+          <li><a href="#info-collect">1. Information We Collect</a></li>
+          <li><a href="#how-use">2. How We Use Your Information</a></li>
+          <li><a href="#data-storage">3. Data Storage & Security</a></li>
+          <li><a href="#interview-data">4. User Interview Data (Important)</a></li>
+          <li><a href="#third-party">5. Third-Party Services</a></li>
+          <li><a href="#cookies">6. Cookies</a></li>
+          <li><a href="#your-rights">7. Your Rights</a></li>
+          <li><a href="#contact-privacy">8. Contact Us</a></li>
+        </ul>
+      </div>
+
+      <p>At ProdMind AI, we take your privacy seriously. This Privacy Policy describes how ProdMind AI ("we", "us", or "our") collects, uses, and protects information you provide when using our service at prodmind-ai.web.app.</p>
+
+      <h2 id="info-collect">1. Information We Collect</h2>
+      <p>We collect the following types of information:</p>
+      <ul>
+        <li><strong>Account Information:</strong> When you create an account, we collect your name, email address, and profile details. If you sign in with Google, we receive your Google profile information.</li>
+        <li><strong>Usage Data:</strong> We track how many analyses you run, your plan type, and account activity timestamps to power your dashboard.</li>
+        <li><strong>Saved Analyses:</strong> When you click "Save Analysis," the product context and AI output are stored in your personal Firestore database.</li>
+        <li><strong>Device Information:</strong> Basic technical data (browser type, device type) for improving our service.</li>
+      </ul>
+
+      <h2 id="how-use">2. How We Use Your Information</h2>
+      <p>Your information is used to:</p>
+      <ul>
+        <li>Provide and improve the ProdMind AI service</li>
+        <li>Track your usage against your plan limits</li>
+        <li>Send product updates and important account notifications (which you can opt out of)</li>
+        <li>Respond to your support requests</li>
+        <li>Analyse aggregate usage patterns to improve our AI analysis quality</li>
+      </ul>
+      <p>We do <strong>not</strong> sell your personal data to third parties, ever.</p>
+
+      <h2 id="data-storage">3. Data Storage & Security</h2>
+      <p>Your account data is stored securely in Google Firebase (Firestore and Authentication), protected by Google's enterprise-grade security infrastructure. Firebase uses industry-standard 256-bit AES encryption for data at rest and TLS 1.2+ for data in transit.</p>
+      <p>We implement Firestore security rules that ensure users can only access their own data. No employee at ProdMind AI can access the contents of your saved analyses without your explicit permission.</p>
+
+      <h2 id="interview-data">4. User Interview Data (Most Important)</h2>
+      <p>This is the section we want to be most clear about. When you paste user interview notes into our analysis tool:</p>
+      <ul>
+        <li>The interview text is sent to our FastAPI backend for processing</li>
+        <li>Our backend sends it to Google Gemini 2.0 for analysis</li>
+        <li><strong>The raw interview text is NEVER stored on our servers</strong> — it is processed in-memory only</li>
+        <li>The analysis <em>output</em> (pain points, quick wins, etc.) is stored only if you click "Save Analysis"</li>
+        <li>Google's Gemini API processes data under Google's privacy policies and does not train on your data by default</li>
+      </ul>
+      <p>In practical terms: your users' private feedback is never stored by ProdMind. We analyze it and immediately discard it.</p>
+
+      <h2 id="third-party">5. Third-Party Services</h2>
+      <p>We use the following third-party services:</p>
+      <ul>
+        <li><strong>Google Firebase:</strong> Authentication, database, and hosting. Governed by Google's Privacy Policy.</li>
+        <li><strong>Google Gemini API:</strong> AI analysis engine. Data is processed per Google's AI data usage policies.</li>
+        <li><strong>Vercel / Railway:</strong> Backend hosting infrastructure. No user data is stored at this layer.</li>
+      </ul>
+
+      <h2 id="cookies">6. Cookies</h2>
+      <p>We use minimal cookies: Firebase Authentication uses cookies to maintain your session state. We do not use advertising, marketing, or tracking cookies. You can disable cookies in your browser settings, though this will prevent you from staying logged in.</p>
+
+      <h2 id="your-rights">7. Your Rights</h2>
+      <p>You have the right to:</p>
+      <ul>
+        <li><strong>Access:</strong> Request a copy of all data we hold about you</li>
+        <li><strong>Delete:</strong> Request deletion of your account and all associated data via Settings → Danger Zone, or by emailing us</li>
+        <li><strong>Export:</strong> Download your saved analyses from the History page</li>
+        <li><strong>Opt-out:</strong> Unsubscribe from all marketing emails at any time</li>
+        <li><strong>Correction:</strong> Update your profile information in the Settings page</li>
+      </ul>
+
+      <h2 id="contact-privacy">8. Contact Us</h2>
+      <p>If you have any questions about this Privacy Policy or how we handle your data, please contact us at <a href="mailto:privacy@prodmind.ai" style="color:var(--accent-purple-light)">privacy@prodmind.ai</a> or through our <a href="contact.html" style="color:var(--accent-purple-light)">contact page</a>.</p>
+      <p>We take privacy concerns seriously and will respond within 48 hours.</p>
+
+    </div>
+  </div>
+</div>
+
+<footer class="footer" style="border-top:1px solid var(--border)">
+  <div class="container">
+    <div class="footer-bottom" style="justify-content:center;gap:32px;padding-top:24px;border-top:none">
+      <a href="index.html">Home</a>
+      <a href="terms.html">Terms</a>
+      <a href="contact.html">Contact</a>
+      <span style="color:var(--text-tertiary)">© 2025 ProdMind AI</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

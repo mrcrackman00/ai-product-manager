@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Changelog — ProdMind AI</title>
+  <meta name="description" content="See all the latest updates, improvements and new features shipped by the ProdMind AI team." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🧠</text></svg>" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/landing.css" />
+</head>
+<body>
+<nav class="navbar scrolled">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/><path d="M19 3v4"/><path d="M21 5h-4"/></svg>
+      ProdMind
+    </a>
+    <div class="nav-links">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-ghost btn-sm">Log In</a>
+      <a href="signup.html" class="btn btn-primary btn-sm">Get Started →</a>
+    </div>
+  </div>
+</nav>
+
+<div style="padding-top:68px">
+  <div class="page-header-inner" style="background:var(--bg-secondary);border-bottom:1px solid var(--border)">
+    <div class="container">
+      <span class="section-label" style="display:flex;justify-content:center;margin-bottom:12px">✦ What's New</span>
+      <h1>Changelog</h1>
+      <p>Every update, improvement, and fix we ship. We move fast — check back often.</p>
+    </div>
+  </div>
+
+  <div class="container" style="padding:80px 24px;max-width:860px">
+
+    <!-- Subscribe strip -->
+    <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--r-lg);padding:20px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:64px;flex-wrap:wrap">
+      <div>
+        <div style="font-weight:600;margin-bottom:2px">Get notified of new releases</div>
+        <div style="font-size:0.875rem;color:var(--text-tertiary)">We ship every week. Stay in the loop.</div>
+      </div>
+      <div style="display:flex;gap:10px">
+        <input type="email" class="input-field" placeholder="you@company.com" id="cl-email" style="width:220px" />
+        <button class="btn btn-primary btn-sm" onclick="document.getElementById('cl-email').value='';this.textContent='Subscribed ✓'">Subscribe</button>
+      </div>
+    </div>
+
+    <div class="changelog-timeline">
+
+      <!-- v0.4 -->
+      <div class="changelog-entry">
+        <div class="changelog-version">
+          <span class="version-tag">v0.4.0</span>
+          <span class="changelog-date">April 3, 2025</span>
+          <span class="pill pill-purple" style="font-size:0.7rem;margin-left:4px">Latest</span>
+        </div>
+        <div class="changelog-title">World-Class UI Upgrade + 8 New Pages</div>
+        <div class="changelog-list">
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-new">New</span>
+            Complete landing page redesign with Bento Grid features, Tweet Wall, FAQ accordion, animated stats, and Monthly/Annual pricing toggle
+          </div>
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-new">New</span>
+            Settings page with Profile, Billing, Integrations, Notifications, and Danger Zone tabs
+          </div>
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-new">New</span>
+            Blog with 5 pre-written PM articles + tag filtering + newsletter subscribe
+          </div>
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-new">New</span>
+            About page with team, mission, values, and open roles
+          </div>
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-new">New</span>
+            Contact page with form, response time info, and social links
+          </div>
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-new">New</span>
+            Changelog, Privacy, and Terms pages — all footer links now live
+          </div>
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-improved">Improved</span>
+            Global CSS design system v2 — gradient text, bento grid, tweet cards, ticker scroller, 800+ new lines
+          </div>
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-fix">Fix</span>
+            History page delete function now uses correct auth reference
+          </div>
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-fix">Fix</span>
+            Removed broken Lucide CDN script from landing page
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.3 -->
+      <div class="changelog-entry">
+        <div class="changelog-version">
+          <span class="version-tag">v0.3.0</span>
+          <span class="changelog-date">March 28, 2025</span>
+        </div>
+        <div class="changelog-title">Firebase Integration & Full Auth System</div>
+        <div class="changelog-list">
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-new">New</span>
+            Firebase Authentication — Email/Password and Google Sign-In
+          </div>
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-new">New</span>
+            Firestore data persistence — analyses saved to user accounts
+          </div>
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-new">New</span>
+            History page with real-time updates and search filtering
+          </div>
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-new">New</span>
+            Usage tracking — analyses used vs. monthly limit
+          </div>
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-new">New</span>
+            User profile creation on signup with Firestore user document
+          </div>
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-improved">Improved</span>
+            Password strength indicator on signup form
+          </div>
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-improved">Improved</span>
+            Animated sidebar usage bar with danger state at 80%
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.2 -->
+      <div class="changelog-entry">
+        <div class="changelog-version">
+          <span class="version-tag">v0.2.0</span>
+          <span class="changelog-date">March 20, 2025</span>
+        </div>
+        <div class="changelog-title">FastAPI Backend + Gemini 2.0 Integration</div>
+        <div class="changelog-list">
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-new">New</span>
+            FastAPI backend with CORS, Pydantic validation, full error handling
+          </div>
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-new">New</span>
+            <code style="font-family:'JetBrains Mono',monospace;font-size:0.85em">/api/analyze</code> endpoint — pain points, quick wins, big bets, don't build
+          </div>
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-new">New</span>
+            <code style="font-family:'JetBrains Mono',monospace;font-size:0.85em">/api/generate-questions</code> — Mom Test interview questions
+          </div>
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-new">New</span>
+            <code style="font-family:'JetBrains Mono',monospace;font-size:0.85em">/api/generate-survey</code> — 5-question validation survey
+          </div>
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-new">New</span>
+            AI engine powered by Gemini 2.0 Flash with structured prompt templates
+          </div>
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-improved">Improved</span>
+            3-step wizard UI in dashboard with loading animation and progress bar
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.1 -->
+      <div class="changelog-entry">
+        <div class="changelog-version">
+          <span class="version-tag">v0.1.0</span>
+          <span class="changelog-date">March 10, 2025</span>
+        </div>
+        <div class="changelog-title">Initial Launch — Premium Design System</div>
+        <div class="changelog-list">
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-new">New</span>
+            Dark-mode-first design system with CSS custom properties, Linear/Notion aesthetic
+          </div>
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-new">New</span>
+            Landing page with hero, features grid, how-it-works, pricing, testimonials
+          </div>
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-new">New</span>
+            Login and Signup pages with split-panel layout
+          </div>
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-new">New</span>
+            Dashboard with sidebar navigation and stat cards
+          </div>
+          <div class="changelog-feature">
+            <span class="changelog-badge badge-new">New</span>
+            Deployed to Firebase Hosting at <a href="https://prodmind-ai.web.app" style="color:var(--accent-purple-light)">prodmind-ai.web.app</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Roadmap teaser -->
+    <div style="margin-top:64px;background:linear-gradient(135deg,rgba(124,58,237,0.08),rgba(79,70,229,0.04));border:1px solid rgba(124,58,237,0.2);border-radius:var(--r-lg);padding:36px;text-align:center">
+      <div style="font-size:1.5rem;margin-bottom:10px">🗺️</div>
+      <h3 style="font-size:1.25rem;letter-spacing:-0.02em;margin-bottom:10px">What's coming next</h3>
+      <div style="display:flex;flex-direction:column;gap:8px;max-width:500px;margin:0 auto 24px;text-align:left">
+        <div style="display:flex;align-items:center;gap:10px;font-size:0.9375rem;color:var(--text-secondary)">
+          <span style="color:var(--accent-purple-light)">→</span> Notion & Linear integration (direct export)
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:0.9375rem;color:var(--text-secondary)">
+          <span style="color:var(--accent-purple-light)">→</span> PDF export with branded report template
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:0.9375rem;color:var(--text-secondary)">
+          <span style="color:var(--accent-purple-light)">→</span> Team workspace with shared analysis library
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:0.9375rem;color:var(--text-secondary)">
+          <span style="color:var(--accent-purple-light)">→</span> AI follow-up mode — deep-dive on any pain point
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:0.9375rem;color:var(--text-secondary)">
+          <span style="color:var(--accent-purple-light)">→</span> Slack bot integration for real-time alerts
+        </div>
+      </div>
+      <a href="contact.html" class="btn btn-primary btn-sm">Vote on features →</a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer" style="border-top:1px solid var(--border)">
+  <div class="container">
+    <div class="footer-bottom" style="justify-content:center;gap:32px;padding-top:24px;border-top:none">
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <span style="color:var(--text-tertiary)">© 2025 ProdMind AI</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

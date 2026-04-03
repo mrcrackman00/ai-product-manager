@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — ProdMind AI</title>
+  <meta name="description" content="Product management insights, founder stories, and AI-powered research tips from the ProdMind team." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🧠</text></svg>" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/landing.css" />
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar scrolled">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/><path d="M19 3v4"/><path d="M21 5h-4"/></svg>
+      ProdMind
+    </a>
+    <div class="nav-links">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-ghost btn-sm">Log In</a>
+      <a href="signup.html" class="btn btn-primary btn-sm">Get Started →</a>
+    </div>
+  </div>
+</nav>
+
+<div style="padding-top:68px">
+  <!-- Page Header -->
+  <div class="page-header-inner" style="background:var(--bg-secondary);border-bottom:1px solid var(--border)">
+    <div class="container">
+      <span class="section-label" style="margin-bottom:12px;display:flex;justify-content:center">✦ ProdMind Blog</span>
+      <h1>Product insights for builders</h1>
+      <p>PM frameworks, AI-powered research tips, and founder stories to help you build what matters.</p>
+    </div>
+  </div>
+
+  <div class="container" style="padding:60px 24px">
+
+    <!-- Featured Post -->
+    <div class="blog-hero-card">
+      <div>
+        <div class="blog-category">📌 Featured</div>
+        <div class="blog-hero-title">The Mom Test: Why Every Founder Is Asking Users the Wrong Questions</div>
+        <p style="color:var(--text-secondary);font-size:0.9375rem;line-height:1.65;max-width:480px;margin-bottom:24px">You're asking your users if they like your idea. They're lying to be polite. Here's the 3-rule framework that gets to the truth — and why it changed how we built ProdMind.</p>
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:32px">
+          <span class="blog-tag blog-tag-pm">Product</span>
+          <span style="font-size:0.8125rem;color:var(--text-tertiary)">8 min read · March 28, 2025</span>
+        </div>
+        <a href="blog-momtest.html" class="btn btn-primary btn-sm">Read Article →</a>
+      </div>
+      <div style="font-size:8rem;padding-bottom:0;align-self:flex-end;opacity:0.8">💬</div>
+    </div>
+
+    <!-- Filter Tags -->
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px">
+      <button class="btn btn-sm btn-primary" onclick="filterBlogs('all')" id="filter-all">All Posts</button>
+      <button class="btn btn-sm btn-ghost" onclick="filterBlogs('ai')" id="filter-ai">AI & Research</button>
+      <button class="btn btn-sm btn-ghost" onclick="filterBlogs('pm')" id="filter-pm">Product Management</button>
+      <button class="btn btn-sm btn-ghost" onclick="filterBlogs('startup')" id="filter-startup">Startups</button>
+    </div>
+
+    <!-- Blog Grid -->
+    <div class="blog-grid" id="blog-grid">
+
+      <a href="blog-momtest.html" class="blog-card" data-tag="pm">
+        <div class="blog-card-cover" style="background:linear-gradient(135deg,#1e0a3c,#0f0a1e)">💬</div>
+        <div class="blog-card-body">
+          <div class="blog-category">Product Management</div>
+          <div class="blog-card-title">The Mom Test: Why Every Founder Is Asking Users the Wrong Questions</div>
+          <p class="blog-card-excerpt">Your users are lying to be polite. The Mom Test gives you 3 rules to ask questions that reveal truth, not validation. Essential reading for every builder.</p>
+          <div class="blog-card-meta">
+            <span class="blog-tag blog-tag-pm">Product</span>
+            <span>8 min · Mar 28</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-ai-pm.html" class="blog-card" data-tag="ai">
+        <div class="blog-card-cover" style="background:linear-gradient(135deg,#0d1b2a,#0a0a1e)">🤖</div>
+        <div class="blog-card-body">
+          <div class="blog-category">AI & Research</div>
+          <div class="blog-card-title">How AI Is Replacing 80% of Manual Product Discovery Work</div>
+          <p class="blog-card-excerpt">Thematic analysis, pattern recognition, prioritization frameworks — all of these used to take a senior PM 4 hours. Now they take 15 seconds. Here's what changed.</p>
+          <div class="blog-card-meta">
+            <span class="blog-tag blog-tag-ai">AI</span>
+            <span>6 min · Mar 22</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-validate.html" class="blog-card" data-tag="startup">
+        <div class="blog-card-cover" style="background:linear-gradient(135deg,#0d2418,#0a1e15)">🚀</div>
+        <div class="blog-card-body">
+          <div class="blog-category">Startups</div>
+          <div class="blog-card-title">How YC Founders Validate Ideas in 48 Hours (And Ship in a Week)</div>
+          <p class="blog-card-excerpt">The secret isn't moving fast. It's asking the right 5 people the right 3 questions. We broke down how the top YC W24 teams do user discovery on a tight deadline.</p>
+          <div class="blog-card-meta">
+            <span class="blog-tag blog-tag-startup">Startup</span>
+            <span>10 min · Mar 15</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-sprint.html" class="blog-card" data-tag="pm">
+        <div class="blog-card-cover" style="background:linear-gradient(135deg,#1a1205,#0f0a00)">⚡</div>
+        <div class="blog-card-body">
+          <div class="blog-category">Product Management</div>
+          <div class="blog-card-title">Quick Wins vs Big Bets: The Framework That Ends Sprint Debates Forever</div>
+          <p class="blog-card-excerpt">Your team argues about what to build every planning session. Here's a simple 2x2 that makes the answer obvious — and why "user feedback" alone isn't enough to decide.</p>
+          <div class="blog-card-meta">
+            <span class="blog-tag blog-tag-pm">Product</span>
+            <span>5 min · Mar 8</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-ai-future.html" class="blog-card" data-tag="ai">
+        <div class="blog-card-cover" style="background:linear-gradient(135deg,#1a0d2e,#0d0a1e)">🔮</div>
+        <div class="blog-card-body">
+          <div class="blog-category">AI & Research</div>
+          <div class="blog-card-title">The Future of Product Management: AI as Your Research Co-Pilot</div>
+          <p class="blog-card-excerpt">In 2027, every PM team will have an AI research assistant. The gap between teams that adopt early and those that don't will widen every quarter. Here's what to prepare for.</p>
+          <div class="blog-card-meta">
+            <span class="blog-tag blog-tag-ai">AI</span>
+            <span>7 min · Feb 28</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Newsletter CTA -->
+    <div style="margin-top:80px;background:linear-gradient(135deg,rgba(124,58,237,0.1),rgba(79,70,229,0.05));border:1px solid rgba(124,58,237,0.2);border-radius:var(--r-lg);padding:48px;text-align:center">
+      <div style="font-size:2rem;margin-bottom:8px">📬</div>
+      <h3 style="font-size:1.5rem;letter-spacing:-0.03em;margin-bottom:10px">Get PM insights in your inbox</h3>
+      <p style="color:var(--text-secondary);margin-bottom:24px;max-width:400px;margin-left:auto;margin-right:auto">One email per week. No fluff. Just the frameworks, AI tools, and research tips that are actually working for founders.</p>
+      <div style="display:flex;gap:12px;justify-content:center;max-width:400px;margin:0 auto">
+        <input type="email" class="input-field" placeholder="you@company.com" id="newsletter-email" style="flex:1" />
+        <button class="btn btn-primary btn-sm" onclick="subscribeNewsletter()">Subscribe →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer" style="border-top:1px solid var(--border)">
+  <div class="container">
+    <div class="footer-bottom" style="justify-content:center;gap:32px;padding-top:24px;border-top:none">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <span style="color:var(--text-tertiary)">© 2025 ProdMind AI</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function filterBlogs(tag) {
+    document.querySelectorAll('[id^="filter-"]').forEach(b => b.className = 'btn btn-sm btn-ghost');
+    document.getElementById('filter-' + tag).className = 'btn btn-sm btn-primary';
+    document.querySelectorAll('.blog-card').forEach(card => {
+      card.style.display = (tag === 'all' || card.dataset.tag === tag) ? 'flex' : 'none';
+    });
+  }
+  function subscribeNewsletter() {
+    const email = document.getElementById('newsletter-email').value;
+    if (!email) return;
+    document.getElementById('newsletter-email').value = '';
+    const c = document.createElement('div');
+    c.textContent = '🎉 Subscribed! Check your inbox for a welcome email.';
+    c.style.cssText = 'color:var(--accent-green);font-weight:600;margin-top:12px;text-align:center';
+    document.getElementById('newsletter-email').parentElement.parentElement.appendChild(c);
+  }
+</script>
+</body>
+</html>

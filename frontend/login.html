@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — ProdMind AI</title>
+  <meta name="description" content="Log in to ProdMind AI and get your next product spec in 10 seconds." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🧠</text></svg>" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+
+<div class="auth-page">
+
+  <!-- ══ LEFT PANEL ══ -->
+  <div class="auth-left">
+    <div class="auth-brand">
+      <a href="index.html" class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/><path d="M19 3v4"/><path d="M21 5h-4"/></svg>
+        ProdMind
+      </a>
+      <h1 class="auth-headline">Your AI product<br />manager. Waiting.</h1>
+      <p class="auth-desc">Stop building the wrong features. Get a prioritized product spec from your user interviews in 10 seconds.</p>
+    </div>
+
+    <div class="value-props stagger">
+      <div class="value-prop">
+        <div class="vp-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5a7 7 0 1 0 0 14 7 7 0 0 0 0-14Z"/></svg>
+        </div>
+        <div class="vp-text">
+          <strong>AI Pain Point Analysis</strong>
+          <span>Finds root causes from raw interview notes automatically</span>
+        </div>
+      </div>
+
+      <div class="value-prop">
+        <div class="vp-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="13 2 13 9 20 9"/><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/></svg>
+        </div>
+        <div class="vp-text">
+          <strong>Instant Product Spec</strong>
+          <span>Quick Wins this week, Big Bets this quarter</span>
+        </div>
+      </div>
+
+      <div class="value-prop">
+        <div class="vp-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="vp-text">
+          <strong>Mom Test Questions</strong>
+          <span>Non-leading follow-up questions that reveal truth</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="auth-left-footer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Secured by Firebase · Your data stays private
+    </div>
+  </div>
+
+  <!-- ══ RIGHT PANEL ══ -->
+  <div class="auth-right">
+    <div class="auth-form-box animate-fadeInUp">
+      <h1>Welcome back</h1>
+      <p class="auth-switch">Don't have an account? <a href="signup.html">Sign up free →</a></p>
+
+      <!-- Error / Success messages -->
+      <div class="form-feedback error-message" id="error-msg" role="alert">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span id="error-text">Something went wrong.</span>
+      </div>
+
+      <form class="auth-form" id="login-form" novalidate>
+        <!-- Email -->
+        <div class="input-group" id="email-group">
+          <label class="input-label" for="email">Email address</label>
+          <div class="input-wrapper">
+            <svg class="input-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <input class="input-field" type="email" id="email" name="email" autocomplete="email" placeholder="you@company.com" required />
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="input-group" id="password-group">
+          <label class="input-label" for="password">Password</label>
+          <div class="input-wrapper has-action">
+            <svg class="input-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <input class="input-field" type="password" id="password" name="password" autocomplete="current-password" placeholder="••••••••" required />
+            <button type="button" class="input-action" id="toggle-pw" aria-label="Toggle password visibility">
+              <svg id="eye-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+          <a href="#" class="forgot-link">Forgot password?</a>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn btn-primary btn-block" id="login-btn">
+          <span class="btn-text">Continue with Email</span>
+          <div class="btn-spinner"></div>
+        </button>
+      </form>
+
+      <div class="divider" style="margin: 24px 0;">or continue with</div>
+
+      <!-- Google -->
+      <button class="btn-google" id="google-btn" type="button">
+        <svg class="google-icon" viewBox="0 0 24 24">
+          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+        </svg>
+        Continue with Google
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Firebase SDK -->
+<script type="module">
+  import { auth, db } from './js/firebase-config.js';
+  import {
+    signInWithEmailAndPassword,
+    signInWithPopup,
+    GoogleAuthProvider,
+    onAuthStateChanged
+  } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+
+  // Redirect if already logged in
+  onAuthStateChanged(auth, (user) => {
+    if (user) window.location.href = 'dashboard.html';
+  });
+
+  const showError = (msg) => {
+    document.getElementById('error-text').textContent = msg;
+    document.getElementById('error-msg').classList.add('visible');
+    document.getElementById('login-form').classList.add('animate-shake');
+    setTimeout(() => document.getElementById('login-form').classList.remove('animate-shake'), 500);
+  };
+
+  const setLoading = (btn, state) => {
+    btn.classList.toggle('loading', state);
+  };
+
+  // Toggle password visibility
+  document.getElementById('toggle-pw').addEventListener('click', () => {
+    const pw = document.getElementById('password');
+    const isText = pw.type === 'text';
+    pw.type = isText ? 'password' : 'text';
+    document.getElementById('eye-icon').innerHTML = isText
+      ? '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>'
+      : '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>';
+  });
+
+  // Email login
+  document.getElementById('login-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = document.getElementById('login-btn');
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+
+    if (!email || !password) return showError('Please fill in all fields.');
+    setLoading(btn, true);
+
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      window.location.href = 'dashboard.html';
+    } catch (err) {
+      const msgs = {
+        'auth/user-not-found': 'No account found with this email.',
+        'auth/wrong-password': 'Incorrect password. Try again.',
+        'auth/invalid-email': 'Please enter a valid email address.',
+        'auth/too-many-requests': 'Too many attempts. Please wait and try again.',
+        'auth/invalid-credential': 'Invalid email or password.'
+      };
+      showError(msgs[err.code] || 'Login failed. Please try again.');
+      setLoading(btn, false);
+    }
+  });
+
+  // Google login
+  document.getElementById('google-btn').addEventListener('click', async () => {
+    const btn = document.getElementById('google-btn');
+    btn.disabled = true;
+    btn.textContent = 'Connecting…';
+    try {
+      const provider = new GoogleAuthProvider();
+      await signInWithPopup(auth, provider);
+      window.location.href = 'dashboard.html';
+    } catch (err) {
+      showError('Google sign-in failed. Please try again.');
+      btn.disabled = false;
+      btn.innerHTML = `<svg class="google-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> Continue with Google`;
+    }
+  });
+</script>
+</body>
+</html>
